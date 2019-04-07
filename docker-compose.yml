@@ -1,16 +1,14 @@
-version: "2.4"
+version: "3"
 
 services:
-  node:
-    image: node:7.7.4-alpine
-    ports:
-      - "8080:3000"
-    volumes:
-      - .:/src
-    working_dir: /src
-    command: node app.js
-    networks: 
-      - webnet
-    platform: linux
-networks: 
-  webnet:
+    sql:
+        ports:
+            - "1433:1433"
+        networks:
+            - sqlnet
+        image: microsoft/mssql-server-linux
+        environment:
+            - ACCEPT_EULA=Y
+            - SA_PASSWORD=yourStrong(!)Password
+networks:
+    sqlnet:
