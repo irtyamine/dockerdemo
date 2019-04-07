@@ -2,6 +2,6 @@ ECHO OFF
 
 ECHO nodejs image
 
-docker build --platform=linux -t nodejs-app .
+docker-compose -f ./docker-compose.yml up node
 
-docker run --platform=linux --rm -p 8080:3000 -d nodejs-app
+docker-compose rm -f
