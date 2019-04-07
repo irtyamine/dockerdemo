@@ -1,7 +1,5 @@
 ECHO OFF
 
-ECHO Running multiple containers for an image
+ECHO nodejs image
 
-docker run -it -d --rm --platform=linux --name ubuntu1 ubuntu /bin/bash
-docker run -it -d --rm --platform=linux --name ubuntu2 ubuntu /bin/bash
-docker run -it -d --rm --platform=linux --name ubuntu3 ubuntu /bin/bash
+docker run --platform=linux -it --rm --name node node:11.9.0-alpine
