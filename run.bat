@@ -1,7 +1,9 @@
 ECHO OFF
 
-ECHO running sql server
+ECHO running web and sql together
 
-docker-compose -f ./docker-compose.yml up sql
+docker-compose build
+
+docker-compose up
 
 docker-compose rm -f
